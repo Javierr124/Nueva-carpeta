@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Elementos a una Lista</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .grid-item {
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Agregar Elementos a una Lista</h1>
+        <input type="text" id="itempinput" placeholder="Escribe un nuevo elemento">
+        <button onclick="additem()">Agregar</button>
+        <div class="grid" id="itemgrid"></div>
+    </div>
+
+    <script>
+        function additem() {
+            var itemvalue = document.getElementById('itempinput').value;
+
+            if (itemvalue.trim () !== ""){
+                var newitem = document.createElement('div');
+                newitem.className = 'grid-item';
+                newitem.textContent = itemvalue;
+
+                document.getElementById('itemgrid') .appendChild(newitem);
+                document.getElementById('iteminput') .value = "";
+            } else {
+                alert("Por favor, escribe un elemento antes de agregar")
+            }
+        }
+    </script> 
+</body>
+</html>
