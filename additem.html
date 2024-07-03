@@ -43,14 +43,14 @@
 <body>
     <div class="container">
         <h1>Agregar Elementos a una Lista</h1>
-        <input type="text" id="itempinput" placeholder="Escribe un nuevo elemento">
+        <input type="text" id="iteminput" placeholder="Escribe un nuevo elemento">
         <button onclick="additem()">Agregar</button>
         <div class="grid" id="itemgrid"></div>
     </div>
 
     <script>
         function additem() {
-            var itemvalue = document.getElementById('itempinput').value;
+            var itemvalue = document.getElementById('iteminput').value;
 
             if (itemvalue.trim () !== ""){
                 var newitem = document.createElement('div');
